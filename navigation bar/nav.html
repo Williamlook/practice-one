@@ -1,0 +1,89 @@
+		<!doctype html>
+		<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<title>nav导航</title>
+			<script src="js/jquery.js" type="text/javascript"></script>
+			<style type="text/css">
+			*{
+				padding: 0px;
+				margin:0px;
+			}
+			.nav{
+				position:fixed;
+				left:0px;
+				top:0px;
+				width:100%;
+				height:100px;
+				background-color:#111111;
+			}
+			.logo{
+				position:absolute;
+				margin-top:28px;
+				margin-left:45px;
+                cursor: pointer;
+			}
+			.navselect{
+				position:absolute;
+				margin-left:45%;
+			}
+			.navselect li{
+				float:left;
+				line-height: 100px;
+				list-style: none;
+				color:#FFFFFF;
+				padding:0 30px;
+
+			}
+			.menu{
+				position:absolute;
+				margin-top:0px;
+				margin-right:0px;
+			}
+			.menu dt{
+				position:relative;
+				height:25px;
+				padding:10px 20px 10px 0px;
+			}
+			.menu dt dl{
+				font-size:15px;
+				line-height: 25px;
+			}
+
+			</style>
+		</head>
+		<body>
+			<div class="nav">
+				<div class="logo"><a src="javascript;"><img src="logo.png" alt="标志" width="130px" height="44px" ></a></div>
+				<div  class="navselect">
+				<ul>
+				<li ><a src="javascript;">产品</a>
+				<div class="menu"><dl><dt>全部产品 新品</dt>
+				<dt>经典木作<nbsp> 现代中式 金石木作 现代轻奢</dt>
+				<dt>柜 架 沙发 椅 桌 床 家具 其他</dt></dl></div></li>
+				<li ><a src="javascript;">项目</a>
+				<div class="menu"><dl><dt>VR  样板房  设计师合作</dt></dl></div></li>
+				<li ><a src="javascript;">购买</a></li>
+				<li ><a src="javascript;">合作</a>
+				<div class="menu"><dl><dt>建筑师、室内设计师媒体</dt></dl></div></li>
+				<li ><a src="javascript;">最新动态</a>
+				<div class="menu"><dl><dt>展讯 媒体 报道短片、海报</dt><dl></div></li>
+				<li ><a src="javascript;">关于MZGF<a>
+				<div class="menu"><dl><dt>公司简介 MZGF工艺 设计师</dt><dt>线下展厅 招聘 联络方式</dt></dl></div></li>
+				</ul>
+				</div>
+			</div>
+			<script>
+			$(function(){
+               $('.menu').hide();
+               $('.navselect ul li').mouseover(function(){
+               	$this=$(this);
+                $('.nav').stop(true).animate({height:"300px"},500);
+                $this.find('.menu').show().parents().siblings().find('.menu:visible').hide();
+               }).mouseout(function(){
+               	$('.nav').stop(true).animate({height:"100px"},500);
+               })
+			});
+			</script>
+		</body>
+		</html>
